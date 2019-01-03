@@ -87,7 +87,7 @@
       const skillCell = newRow.insertCell();
 
       const candidateName = document.createTextNode(name);
-      const candidateSkills = document.createTextNode(skills.join(', '));
+      const candidateSkills = document.createTextNode(skills.join(", "));
 
       nameCell.appendChild(candidateName);
       skillCell.appendChild(candidateSkills);
@@ -102,7 +102,7 @@
         candidates.forEach(function(candidate) {
           if (candidate.skills.includes(skill)) {
             filteredCandidates.push(candidate);
-          };
+          }
         });
       return filteredCandidates;
     }
@@ -114,9 +114,9 @@
     removeRowsFromTable(javaScriptCandidatesTable);
     removeRowsFromTable(AWSCandidatesTable);
 
-    const javaScriptFilteredCandidates = filterCandidateBySkill(newCandidates, 'JavaScript');
+    const javaScriptFilteredCandidates = filterCandidateBySkill(newCandidates, "JavaScript");
     addCandidatesToTable(javaScriptCandidatesTable, javaScriptFilteredCandidates);
-    const AWSFilteredCandidates = filterCandidateBySkill(newCandidates, 'AWS');
+    const AWSFilteredCandidates = filterCandidateBySkill(newCandidates, "AWS");
     addCandidatesToTable(AWSCandidatesTable, AWSFilteredCandidates);
 
     const javascript = document.getElementById("javascript");
