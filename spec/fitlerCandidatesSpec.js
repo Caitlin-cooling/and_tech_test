@@ -18,5 +18,11 @@ describe('FilterCandidates', function() {
     ]);
   });
 
-
+  it('whose skill includes AWS', function() {
+    expect(filterCandidateBySkill(newCandidates, "AWS")).toEqual([
+      { name: "Mario", skills: ["Python", "AWS"] },
+      { name: "Anna", skills: ["JavaScript", "AWS"] },
+      { name: "Matt", skills: ["PHP", "AWS"] },
+    ]);
+  });
 });
